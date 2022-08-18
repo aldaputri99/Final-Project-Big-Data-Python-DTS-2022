@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='bootstrap.min.css') }}">
+
+    <style>
+        .jumbotron{
+          background: 
+        linear-gradient(
+        rgba(0, 0, 250, 0.5), 
+        rgba(125, 250, 250, 0.5)
+        ),
+        url(https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color:white !important;
+        }
+        .card-img-top{
+          width: 100%; 
+          height: 15vw; 
+          object-fit: cover;
+        }
+    </style>
+</head>
+<!--unsplash sourcing: https://source.unsplash.com/1600x1050/?python+programming-->
+
+{% if session.logged_in %}
+
+{% set navigation_bar = [
+  ('/', 'home', 'Home'),
+  ('/about', 'about', 'Tentang Quithon'),
+  ('/materi', 'materi', 'Materi'),
+  ('/quiz', 'quiz', 'Kuis'),
+  ('/grade', 'grade', 'Nilai')
+] %}
+
+{% else %}
+
+{% set navigation_bar = [
+    ('/', 'home', 'Home'),
+    ('/about', 'about', 'Tentang Quithon'),
+] %}
+
+{% endif %}
+
+{% set active_page = active_page|default('home') -%}
+<body>
+    <!--Navigation Bar-->
+  <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Quithon</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExample03">
+        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+            {% for href, id, caption in navigation_bar %}
+            <li class="nav-item">
+                <a {% if id == active_page %} class="nav-link active" {% else %} class="nav-link" {% endif%} href="{{ href|e }}">{{ caption|e }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+
+        {% if session.logged_in %}
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" role="button">
+                Selamat datang, {{session.name}}
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="/logout">Keluar</a></li>
+              </ul>
+            </li>
+        </ul>
+
+        <!--<form role="button">
+          <a class="btn btn-info" href="/logout" role="button">Keluar</a>
+        </form>
+        <span class="navbar-text">Selamat datang, {{session.name}}</span>-->
+        
+        {% else %}
+        <form role="button">
+          <a class="btn btn-info" href="/login" role="button">Masuk/Daftar</a>
+        </form>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+<main>
+  {% block content %}{% endblock %}
+</main>
+<script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

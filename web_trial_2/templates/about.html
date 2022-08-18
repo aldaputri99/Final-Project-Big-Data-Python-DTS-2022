@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+{% set active_page = "about" %}
+
+{% block title %}Belajar Python | Quithon{% endblock %}
+
+{% block content %}
+
+  <!--Jumbotron 1-->
+  <div class="jumbotron jumbotron-fluid p-5 mb-4">
+    <div class="container-fluid py-5 text-center">
+      <h1 class="display-5 fw-bold">Tentang Kami</h1>
+    </div>
+  </div>
+
+  <!--Container 1-->
+  <div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" class="d-block mx-lg-auto img-fluid" alt="Coding" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold lh-1 mb-3">Kami yang bekerja di Quithon</h1>
+        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis in quidem repellendus deleniti non laboriosam animi dolores magnam obcaecati minus. Velit molestias temporibus nihil quaerat? Quisquam, ducimus? Ducimus, quam asperiores!</p>
+      </div>
+    </div>
+  </div>
+
+  <!--Container 2-->
+  <div class="bg-light">
+    <div class="container px-4 py-5" id="icon-grid">
+    <h1 class="pb-2 border-bottom fw-bold">Pilihan Materi</h1>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+      <div class="col d-flex align-items-start">
+        <div>
+          <h4 class="fw-bold mb-0">Dasar Python</h4>
+          <p>Paragraph of text beneath the heading to explain the heading.</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div>
+          <h4 class="fw-bold mb-0">Loop dan Conditional</h4>
+          <p>Paragraph of text beneath the heading to explain the heading.</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div>
+          <h4 class="fw-bold mb-0">Function dan Dictionary</h4>
+          <p>Paragraph of text beneath the heading to explain the heading.</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div>
+          <h4 class="fw-bold mb-0">List dan Tuple</h4>
+          <p>Paragraph of text beneath the heading to explain the heading.</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div>
+          <h4 class="fw-bold mb-0">Data Processing</h4>
+          <p>Paragraph of text beneath the heading to explain the heading.</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div>
+          <h4 class="fw-bold mb-0">String dan Exception</h4>
+          <p>Paragraph of text beneath the heading to explain the heading.</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div>
+          <h4 class="fw-bold mb-0">Object-Oriented Programming</h4>
+          <p>Paragraph of text beneath the heading to explain the heading.</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div>
+          <h4 class="fw-bold mb-0">Module dan Package</h4>
+          <p>Paragraph of text beneath the heading to explain the heading.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+   <!--Testimonial Cards-->
+   <div class=" bg-body">
+    <div class="container col-xxl-8 px-4 py-5" id="custom-cards">
+  
+      <h1 class="pb-2 border-bottom fw-bold">Testimoni</h1>
+  
+      <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        <div class="col">
+          <div class="card h-100 overflow-hidden rounded-4 shadow-lg">
+            <img src="https://images.unsplash.com/photo-1598966739654-5e9a252d8c32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Ali Kazal</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Web Developer</h6>
+              <blockquote class="blockquote mb-0"><q><em>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</em></q></blockquote>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 overflow-hidden rounded-4 shadow-lg">
+              <img src="https://images.unsplash.com/photo-1594583388237-911c593badee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">Tabitha</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Pengusaha</h6>
+                <blockquote class="blockquote mb-0"><q><em>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</em></q></blockquote>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 overflow-hidden rounded-4 shadow-lg">
+              <img src="https://images.unsplash.com/photo-1590031905406-f18a426d772d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1844&q=80" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">Andrea Rico</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Mahasiswa</h6>
+                <blockquote class="blockquote mb-0"><q><em>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</em></q></blockquote>
+              </div>
+            </div>
+          </div>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% set active_page = "materi" %}
+
+{% block title %}Semua Materi | Quithon{% endblock %}
+
+{% block content %}
+
+<div class="container col-xxl-8 px-4 py-5" id="custom-cards">
+    <h1 class="display-5 fw-bold">Dasar Python: Kelebihan dan Kekurangan Python</h1>
+
+    <div class="row align-items-stretch g-4 py-5">
+        <div class="col">
+            <p class="lh-lg" style="text-align: justify"><span class="font-monospace bg-light border">"Hello World"</span> adalah salah satu contoh program yang dibuat dengan Python. 
+                Program ini menggunakan fungsi print untuk menampilkan output program berupa teks, angka, atau karakter lain
+                <br/>
+                Untuk membuat program Hello World, tuliskan skrip berikut:
+                <br/>
+            </p>
+
+            <p class="font-monospace bg-light border border-2 p-2">print("Hello World!")</p>
+
+            <p class="lh-lg" style="text-align: justify">Berikut hasilnya ketika dijalankan:</p>
+
+            <p class="font-monospace bg-light border border-2 p-2">Hello World</p>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

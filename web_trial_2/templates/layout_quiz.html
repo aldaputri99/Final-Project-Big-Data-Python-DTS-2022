@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='bootstrap.min.css') }}">
+</head>
+{% if session.logged_in %}
+
+{% set navigation_bar = [
+  ('/', 'home', 'Home'),
+  ('/about', 'about', 'Tentang Quithon'),
+  ('/materi', 'materi', 'Materi'),
+  ('/quiz', 'quiz', 'Kuis'),
+  ('/grade', 'grade', 'Nilai')
+] %}
+
+{% else %}
+
+{% set navigation_bar = [
+    ('/', 'home', 'Home'),
+    ('/about', 'about', 'Tentang Quithon'),
+] %}
+
+{% endif %}
+{% set active_page = active_page|default('home') -%}
+<body>
+    <!--Navigation Bar-->
+  <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Quithon</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExample03">
+        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+            {% for href, id, caption in navigation_bar %}
+            <li class="nav-item">
+                <a {% if id == active_page %} class="nav-link active" {% else %} class="nav-link" {% endif%} href="{{ href|e }}">{{ caption|e }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+
+        {% if session.logged_in %}
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" role="button">
+                Selamat datang, {{session.name}}
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="/logout">Keluar</a></li>
+              </ul>
+            </li>
+        </ul>
+        
+        {% else %}
+        <form role="button">
+          <a class="btn btn-info" href="/login" role="button">Masuk/Daftar</a>
+        </form>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+<main>
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-stretch g-5 py-5">
+            <div class="col-14 col-sm-12 col-lg-10">
+                {% block content %}{% endblock %}
+            </div>
+            <div class="col-lg-2">
+                <p class="fw-bold">
+                  <span class="fs-4">Pertanyaan:</span>
+                </p>
+                <hr>
+                <ul class="list-group list-group-flush">
+                    {% block quest_list %} {% endblock %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

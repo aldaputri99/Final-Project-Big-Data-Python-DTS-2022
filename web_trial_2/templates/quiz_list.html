@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% set active_page = "quiz" %}
+
+{% block title %}Semua Kuis | Quithon{% endblock %}
+
+{% block content %}
+
+<div class="container col-xxl-8 px-4 py-5" id="custom-cards">
+    <h1 class="display-5 fw-bold">Kuis</h1>
+    
+        {% for sb in sub_list %}
+        {% if sub_list.index(sb) % 3 == 0 %}
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        {% endif %}
+        <div class="col">
+            <div class="card overflow-hidden rounded-4 shadow-lg">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">{{ sb[0] }}</h5>
+                <p class="card-text text-secondary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a class="btn btn-warning" href="{{ url_for('get_quiz', subject=sb[0]) }}" role="button">Mulai Kuis</a>
+                <!--<input class="btn btn-warning" type="submit" value="Mulai Kuis">-->
+              </div>
+            </div>
+        </div>
+        {% if sub_list.index(sb) % 3 == 2 %}
+        </div>
+        {% endif %}
+        {% endfor %}
+    
+    <!--
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+      <div class="col">
+        <div class="card overflow-hidden rounded-4 shadow-lg">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Dasar Python</h5>
+            <p class="card-text text-secondary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a class="btn btn-warning" href="/quiz/dasar-python" role="button">Mulai Kuis</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card overflow-hidden rounded-4 shadow-lg">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">List, Tuple, dan Dictionary</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a class="btn btn-warning" href="#" role="button">Mulai Kuis</a>
+            </div>
+          </div>
+      </div>
+
+      <div class="col">
+        <div class="card overflow-hidden rounded-4 shadow-lg">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Module dan Package</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a class="btn btn-warning" href="#" role="button">Mulai Kuis</a>
+            </div>
+          </div>
+      </div>
+
+    </div>
+    -->
+</div>
+
+{% endblock %}

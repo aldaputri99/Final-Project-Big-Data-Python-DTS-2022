@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% set active_page = "quiz" %}
+
+{% block title %}Kuis | Quithon{% endblock %}
+
+{% block content %}
+
+<div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center">
+      <div class="col text-center">
+        <h1 class="display-5 fw-bold">{{txt}}</h1>
+        <h2 class="display-6 fw-bold border-bottom p-5">Skor: {{txt_skor}}</h2>
+        <a class="btn btn-danger" href="/quiz" role="button">Kembali ke halaman kuis</a>
+      </div>
+  </div>
+</div>
+
+{% endblock %}

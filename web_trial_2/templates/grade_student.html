@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% set active_page = "grade" %}
+
+{% block title %}Nilai | Quithon{% endblock %}
+
+{% block content %}
+
+<div class="container col-xxl-8 px-4 py-5" id="custom-cards">
+    <h1 class="display-5 fw-bold">
+        Nilai
+    </h1>
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Tabel</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/grade/plot">Grafik</a>
+        </li>
+    </ul>
+    <!--<a class="btn btn-warning" href="/grade/plot" role="button">Lihat Grafik</a>-->
+
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Judul Kuis</th>
+                <th scope="col">Skor</th>
+                <th scope="col">Tanggal Pengerjaan</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for g in grade_list %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ g[1] }}</td>
+                <td>{{ g[3] }}</td>
+                <td>{{ g[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+</div>
+
+{% endblock %}

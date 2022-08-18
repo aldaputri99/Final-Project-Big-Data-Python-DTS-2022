@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% set active_page = "login" %}
+
+{% block title %}Masuk | Quithon{% endblock %}
+
+{% block content %}
+
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+      <div class="col-lg-7 text-center text-lg-start">
+        <h1 class="display-4 fw-bold lh-1 mb-3">Mulai belajar bersama Quithon</h1>
+        <p class="col-lg-10 fs-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste fuga a, inventore architecto cum perspiciatis adipisci molestias praesentium nisi error dolorum veritatis laborum expedita accusamus impedit nobis quos labore. Hic?</p>
+      </div>
+      <div class="col-md-10 mx-auto col-lg-5">
+        <form method="POST" action="{{ url_for('login_student')}}" class="p-4 p-md-5 border rounded-3 bg-light">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email" required>
+            <label for="email">Email</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+            <label for="password">Kata Sandi</label>
+          </div>
+          <!--<div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+          </div>-->
+          <button class="w-100 btn btn-lg btn-primary" type="submit">Masuk</button>
+          <hr class="my-4">
+          <small class="text-muted fw-bold">Belum punya akun? <a href="/login">Daftar di sini.</a> </small>
+          <p><small class="text-muted">Masuk sebagai pengajar? <a href="/login-teacher">Klik di sini.</a> </small></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

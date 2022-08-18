@@ -1,0 +1,59 @@
+{% extends "layout_quiz.html" %}
+{% set active_page = "quiz" %}
+
+{% block title %}Kuis | Quithon{% endblock %}
+
+{% block quest_list %}
+{% for q in quest_list %}
+    <li class="list-group-item">
+        <a type="button" value="{{q[0]}}" href="{{url_for('get_quest',subject=q[1],qid=q[0])}}" class="btn btn-outline-dark {{ q[9] }}">
+            Soal {{loop.index}}
+        </a>
+    </li>
+{% endfor %}
+<br><br><a class="btn btn-danger" href="{{url_for('finish', subject=quest[1])}}" role="button">Selesai</a>
+{% endblock %}
+
+{% block content %} 
+<h1 class="display-5 fw-bold">Kuis {{quest[1]}}</h1>
+<hr>
+<form method="POST" action="{{url_for('save_answer')}}" class="row g-3">
+    <div class="h4">{{quest[2]}}</div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="answer" id="opt1" value="1" {{ quest[9] }}>
+            <label class="form-check-label" for="opt1">
+                {{quest[3]}}
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="answer" id="opt2" value="2" {{ quest[9] }}>
+            <label class="form-check-label" for="opt2">
+                {{quest[4]}}
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="answer" id="opt3" value="3" {{ quest[9] }}>
+            <label class="form-check-label" for="opt3">
+                {{quest[5]}}
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="answer" id="opt4" value="4" {{ quest[9] }}>
+            <label class="form-check-label" for="opt4">
+                {{quest[6]}}
+            </label>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary {{ quest[9] }}">Simpan Jawaban</button>
+        </div>
+    <div class="row" style="opacity:0 ;">
+        <div class="col-6">
+            <input type="text" name="qid" value="{{quest[0]}}" class="form-control-sm disabled">
+        </div>
+        <div class="col-4">
+            <input type="text" name="subject" value='{{quest[1]}}' class="form-control-sm disabled">
+        </div>
+    </div>  
+</form>
+
+{% endblock %}

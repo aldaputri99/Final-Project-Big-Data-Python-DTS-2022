@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% set active_page = "materi" %}
+
+{% block title %}Semua Materi | Quithon{% endblock %}
+
+{% block content %}
+
+<div class="container col-xxl-8 px-4 py-5" id="custom-cards">
+    <h1 class="display-5 fw-bold">Dasar Python: Kelebihan dan Kekurangan Python</h1>
+
+    <div class="row align-items-stretch g-4 py-5">
+        <div class="col">
+            <p class="lh-lg" style="text-align: justify">Banyak orang yang tertarik untuk menggunakan Python karena dianggap mudah untuk dipelajari, sekalipun oleh para pemula. 
+                Kode-kode yang ada didalamnya mudah dibaca dan dapat menjalankan banyak fungsi kompleks dengan mudah karena banyaknya standard library. 
+                Pengembangan program pada Python pun dapat dilakukan dengan cepat dan menggunakan lebih sedikit kode. 
+                Bahkan Python mampu menjadikan program dengan skala sangat rumit menjadi mudah. Python sendiri mendukung multi platform dan multi system serta memiliki sistem pengelolaan memori otomatis seperti Java.</p>
+
+            <p class="lh-lg" style="text-align: justify">Sayangnya Python cukup lambat dijalankan. 
+                Untuk pengembangan platform Android dan IOS juga terbilang  kurang support. 
+                Python juga memiliki keterbatasan dengan akses basis data. 
+                Selain itu Python tidak cocok untuk melakukan tugas-tugas intensif memori dan pekerjaan multi-core/multi-processor.</p>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

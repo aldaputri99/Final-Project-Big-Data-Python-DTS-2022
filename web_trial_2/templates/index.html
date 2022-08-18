@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+{% set active_page = "home" %}
+
+{% block title %}Belajar Python | Quithon{% endblock %}
+
+{% block content %}
+
+  <!--Jumbotron 1-->
+  <div class="jumbotron jumbotron-fluid p-5 mb-4">
+    <div class="container-fluid py-5">
+      <h1 class="display-5 fw-bold">Belajar Python Sekarang</h1>
+      <p class="col-md-8 fs-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae sapiente minus earum soluta maiores voluptate omnis veniam. Voluptatibus, consectetur.</p>
+      <a class="btn btn-outline-light btn-lg"  href="/login" role="button">Mulai Sekarang</a>
+    </div>
+  </div>
+
+  <!--Container 1-->
+  <div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="https://images.unsplash.com/photo-1624953587687-daf255b6b80a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" class="d-block mx-lg-auto img-fluid" alt="Coding" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold lh-1 mb-3">Mengapa harus Quithon?</h1>
+        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis in quidem repellendus deleniti non laboriosam animi dolores magnam obcaecati minus. Velit molestias temporibus nihil quaerat? Quisquam, ducimus? Ducimus, quam asperiores!</p>
+      </div>
+    </div>
+  </div>
+
+  <!--Course Cards-->
+  <div class=" bg-light">
+  <div class="container col-xxl-8 px-4 py-5" id="custom-cards">
+
+    <h1 class="pb-2 border-bottom fw-bold">Materi Terpopuler</h1>
+
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+      <div class="col">
+        <div class="card h-100 overflow-hidden rounded-4 shadow-lg">
+          <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Dasar Python</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+          <!--<div class="card-footer text-muted">
+            2 days ago
+          </div>-->
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 overflow-hidden rounded-4 shadow-lg">
+          <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">List, Tuple, dan Dictionary</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+          <!--<div class="card-footer text-muted">
+            2 days ago
+          </div>-->
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 overflow-hidden rounded-4 shadow-lg">
+          <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Module dan Package</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+          <!--<div class="card-footer text-muted">
+            2 days ago
+          </div>-->
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+{% endblock %}
